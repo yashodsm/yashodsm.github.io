@@ -63,7 +63,7 @@ header .social a:hover {
 }
 
 .hero {
-    background-image: url('your-hero-image.jpg'); /* Replace with your image path */
+    background-image: url('images/hero\ image.jpg'); /* image path */
     background-size: cover;
     background-position: center;
     height: 80vh; /* Adjust hero height */
