@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
     <title>Charley Knox Photography</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -37,77 +36,5 @@
             <p>&copy; 2023 Charley Knox Photography</p>
         </div>
     </footer>
-=======
-    <title>Yashod's Portfolio</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            margin: 0;
-            overflow: hidden; /* Prevent scrollbar during transition */
-        }
-
-        .page {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
-            transition: opacity 0.5s ease-in-out;
-            background-color: #f4f4f4;
-        }
-
-        .page.fade-out {
-            opacity: 0;
-        }
-
-        .navigation {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .navigation a {
-            margin-left: 15px;
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div id="home" class="page">
-        <h1>Hi, I'm Yashod!</h1>
-        <p>Welcome to my portfolio.</p>
-        <div class="navigation">
-            <a href="skills.html">My Skills</a>
-        </div>
-    </div>
-
-    <script>
-        function navigateTo(url) {
-            const currentPage = document.querySelector('.page');
-            currentPage.classList.add('fade-out');
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 500); // Match the CSS transition duration
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('.navigation a');
-            links.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    navigateTo(this.getAttribute('href'));
-                });
-            });
-        });
-    </script>
->>>>>>> dfb7b706a5bf708e8e2f111e21f22416af7e1213
 </body>
 </html>
