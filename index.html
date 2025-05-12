@@ -3,28 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Yashod</title>
+  <title>Parallax Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <header>
-    <div class="logo">Yashod</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="hero">
+    <div class="hero-text">
+      <h1><span class="typewrite" data-period="2000" data-type='[ "Welcome to Yashod’s Portfolio", "Web Developer", "UI/UX Enthusiast", "Let’s Build Something Great!" ]'></span></h1>
+      <p>Web Developer & Designer</p>
+    </div>
   </header>
 
-  <section style="height: 100vh; background: url('assets/hero\ image.jpg') center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
-    <h1>Welcome to Yashod's Portfolio</h1>
+  <section class="parallax-section about">
+    <div class="content">
+      <h2>About Me</h2>
+      <p>I build beautiful and responsive websites.</p>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Yashod. All rights reserved.
-  </footer>
+  <section class="projects">
+  <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 2rem;">My Projects</h2>
+  <div class="project-grid">
+    
+    <!-- Project 1 -->
+    <div class="project-tile">
+      <a href="project1.html">
+        <div class="tile-image">
+          <img src="images/project1.jpg" alt="Project 1">
+          <div class="overlay">
+            <h3>Project 1</h3>
+            <p>Brief description of Project 1.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-tile">
+      <a href="project2.html">
+        <div class="tile-image">
+          <img src="images/project2.jpg" alt="Project 2">
+          <div class="overlay">
+            <h3>Project 2</h3>
+            <p>Brief description of Project 2.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-tile">
+      <a href="project3.html">
+        <div class="tile-image">
+          <img src="images/project3.jpg" alt="Project 3">
+          <div class="overlay">
+            <h3>Project 3</h3>
+            <p>Brief description of Project 3.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+  <section class="parallax-section contact">
+    <div class="content">
+      <h2>Contact</h2>
+      <p>Email me at jane@example.com</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+/* typewrite effect -start */
+  <script>
+  class TxtType {
+    constructor(el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 10) || 2000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    }
+
+    tick() {
+      const i = this.loopNum % this.toRotate.length;
+      const fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = `<span class="wrap">${this.txt}</span>`;
+
+      let delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(() => this.tick(), delta);
+    }
+  }
+
+  window.onload = function () {
+    const elements = document.getElementsByClassName('typewrite');
+    for (let i = 0; i < elements.length; i++) {
+      const toRotate = elements[i].getAttribute('data-type');
+      const period = elements[i].getAttribute('data-period');
+      if (toRotate) {
+        new TxtType(elements[i], JSON.parse(toRotate), period);
+      }
+    }
+  };
+</script>
+/* typewrite effect - end */
 
 </body>
 </html>
