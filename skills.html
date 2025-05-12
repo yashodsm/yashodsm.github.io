@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yashod's Portfolio</title>
+    <title>Yashod's Skills</title>
     <style>
         body {
             font-family: sans-serif;
@@ -23,54 +23,57 @@
             align-items: center;
             opacity: 1;
             transition: opacity 0.5s ease-in-out;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa;
         }
 
-        .page.fade-out {
-            opacity: 0;
+        .page.fade-in {
+            opacity: 1;
         }
 
         .navigation {
             position: absolute;
             top: 20px;
-            right: 20px;
+            left: 20px;
         }
 
         .navigation a {
-            margin-left: 15px;
+            margin-right: 15px;
             text-decoration: none;
             color: #333;
             font-weight: bold;
         }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .skills-list li {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
-    <div id="home" class="page">
-        <h1>Hi, I'm Yashod!</h1>
-        <p>Welcome to my portfolio.</p>
+    <div id="skills" class="page">
+        <h2>My Skills</h2>
+        <ul class="skills-list">
+            <li>Networking (Cisco)</li>
+            <li>Programming</li>
+            <li>Badminton</li>
+            <li>Photography</li>
+        </ul>
         <div class="navigation">
-            <a href="skills.html">My Skills</a>
+            <a href="index.html">Home</a>
         </div>
     </div>
 
     <script>
-        function navigateTo(url) {
-            const currentPage = document.querySelector('.page');
-            currentPage.classList.add('fade-out');
-
-            setTimeout(() => {
-                window.location.href = url;
-            }, 500); // Match the CSS transition duration
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('.navigation a');
-            links.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    navigateTo(this.getAttribute('href'));
-                });
-            });
+            const page = document.querySelector('.page');
+            // Force a reflow to trigger the transition
+            page.offsetHeight;
+            page.classList.add('fade-in');
         });
     </script>
 </body>
