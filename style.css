@@ -1,0 +1,116 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Default text color */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Adjust header height */
+}
+
+header {
+    background-color: #222; /* Dark header background */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+}
+
+header .social a {
+    color: #ddd;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+header .social a:hover {
+    color: #fff;
+}
+
+.hero {
+    background-image: url('your-hero-image.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 80vh; /* Adjust hero height */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px; /* Adjust left padding */
+    color: #fff; /* Text color on hero image */
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional dark overlay */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    letter-spacing: 0.2em;
+}
+
+footer {
+    background-color: #222;
+    color: #ddd;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .container {
+    justify-content: center;
+}
