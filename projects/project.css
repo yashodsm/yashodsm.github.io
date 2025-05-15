@@ -1,126 +1,81 @@
-/* Specific styles for individual project pages */
-
-body {
-    background-color: #f4f4f4; /* Light background for project pages */
-    color: #333;
+.projects-header {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
 }
 
-.container {
+.projects-header .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.project-header {
-    background-color: #fff;
-    padding: 30px 0;
-    margin-bottom: 30px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.project-header .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline; /* Align title and meta */
 }
 
-.project-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
+.projects-header h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
 }
 
-.back-button {
-    /* Inherits glass-button styles from your main CSS */
-    font-size: 1em;
-    padding: 8px 15px;
+.projects-header .subtitle {
+    color: #777;
+    font-size: 1.2rem;
 }
 
-.project-content section {
-    background-color: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+.projects-header .header-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: #555;
 }
 
-.project-content h2 {
-    font-size: 2rem;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 0.5rem;
-}
-
-.overview-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.overview-section li {
-    margin-bottom: 0.5rem;
-}
-
-.overview-section strong {
-    font-weight: bold;
-}
-
-.details-section .section-content {
-    line-height: 1.6;
-}
-
-.details-section h3 {
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-}
-
-.details-section ul {
-    list-style: disc;
-    padding-left: 20px;
-}
-
-.hero-image-section {
-    margin-bottom: 30px;
-}
-
-.hero-image {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.visuals-section .visual-grid {
+.projects-grid-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 30px;
 }
 
-.visuals-section .visual-grid img {
-    width: 100%;
+.project-item {
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
 }
 
-.conclusion-section {
-    text-align: center;
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-.live-link {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 1.1em;
-    padding: 12px 25px;
-    text-decoration: none; /* Ensure no underline */
+.project-item a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eee;
 }
 
-footer .container {
-    padding: 0 20px;
+.project-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-info .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.project-info .project-description {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
 }
