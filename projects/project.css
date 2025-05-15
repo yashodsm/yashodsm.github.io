@@ -1,0 +1,126 @@
+/* Specific styles for individual project pages */
+
+body {
+    background-color: #f4f4f4; /* Light background for project pages */
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.project-header {
+    background-color: #fff;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.project-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.back-button {
+    /* Inherits glass-button styles from your main CSS */
+    font-size: 1em;
+    padding: 8px 15px;
+}
+
+.project-content section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.project-content h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.overview-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.overview-section li {
+    margin-bottom: 0.5rem;
+}
+
+.overview-section strong {
+    font-weight: bold;
+}
+
+.details-section .section-content {
+    line-height: 1.6;
+}
+
+.details-section h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.details-section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.hero-image-section {
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.visuals-section .visual-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.visuals-section .visual-grid img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.conclusion-section {
+    text-align: center;
+}
+
+.live-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 1.1em;
+    padding: 12px 25px;
+    text-decoration: none; /* Ensure no underline */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer .container {
+    padding: 0 20px;
+}
