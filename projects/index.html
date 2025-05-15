@@ -50,7 +50,7 @@
     </main>
 
     <div class="container" style="text-align: center;">
-        <a href="../../" class="bottom-nav-button">Back to Home</a>
+        <a href="../../" class="back-home-button">Back to Home</a>
     </div>
 
     <script>
@@ -66,9 +66,9 @@
                 const keywords = item.dataset.keywords.toLowerCase();
 
                 if (title.includes(searchTerm) || description.includes(searchTerm) || keywords.includes(searchTerm)) {
-                    item.style.display = 'block'; // Show the item
+                    item.style.display = 'block';
                 } else {
-                    item.style.display = 'none'; // Hide the item
+                    item.style.display = 'none';
                 }
             });
         });

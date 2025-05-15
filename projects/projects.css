@@ -87,7 +87,7 @@
     font-size: 1rem;
 }
 
-/* Styles for the back to home button (Updated to dark glass) */
+/* Styles for the back to home button (Dark glass style) */
 .back-home-button {
     background: rgba(0, 0, 0, 0.6); /* Dark, semi-transparent background */
     color: white;
