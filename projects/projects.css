@@ -1,3 +1,6 @@
+/* projects/projects.css */
+
+/* Existing styles for the projects page */
 .projects-header {
     background-color: #f8f8f8;
     padding: 40px 20px;
@@ -10,24 +13,12 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: baseline; /* Align title and meta */
+    align-items: baseline; /* Align title and search */
 }
 
 .projects-header h1 {
     font-size: 3rem;
-    margin-bottom: 5px;
-}
-
-.projects-header .subtitle {
-    color: #777;
-    font-size: 1.2rem;
-}
-
-.projects-header .header-meta {
-    display: flex;
-    gap: 20px;
-    font-size: 0.9rem;
-    color: #555;
+    margin-bottom: 0; /* Adjust margin */
 }
 
 .projects-grid-container {
@@ -78,4 +69,42 @@
     color: #666;
     font-size: 1rem;
     line-height: 1.4;
+}
+
+/* Styles for the search tool */
+.search-container {
+    padding: 20px 0; /* Adjust vertical padding */
+    text-align: left; /* Align search input to the left in the header */
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Make it take full width of its container */
+    max-width: 400px; /* Limit maximum width */
+    font-size: 1rem;
+}
+
+/* Styles for the back to home button */
+.back-home-button {
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light, slightly transparent white border */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px; /* Slightly rounded */
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    display: inline-block; /* To allow margin/padding */
+    margin-top: 20px; /* Add some space above the button */
+}
+
+.back-home-button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
 }
