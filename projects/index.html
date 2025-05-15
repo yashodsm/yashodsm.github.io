@@ -22,19 +22,35 @@
             max-width: 600px;
             font-size: 1rem;
         }
+
+        .back-home-button {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Light, slightly transparent white border */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px; /* Slightly rounded */
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+            display: inline-block; /* To allow margin/padding */
+            margin-top: 20px; /* Add some space above the button */
+        }
+
+        .back-home-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
     </style>
 </head>
 <body>
     <header class="projects-header">
         <div class="container">
             <h1>Projects</h1>
-            <p class="subtitle">Tonlegle design</p>
-            <div class="header-meta">
-                <span>SORT/FILTER</span>
-                <div class="search-container">
-                    <input type="text" id="searchInput" class="search-input" placeholder="Search Projects...">
-                </div>
-                <span>03</span>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="Search Projects...">
             </div>
         </div>
     </header>
@@ -120,6 +136,10 @@
             </a>
         </div>
     </main>
+
+    <div class="container" style="text-align: center;">
+        <a href="../../" class="back-home-button">Back to Home</a>
+    </div>
 
     <script>
         const searchInput = document.getElementById('searchInput');
