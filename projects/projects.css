@@ -87,24 +87,21 @@
     font-size: 1rem;
 }
 
-/* Styles for the back to home button */
+/* Styles for the back to home button (Updated to dark glass) */
 .back-home-button {
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light, slightly transparent white border */
+    background: rgba(0, 0, 0, 0.6); /* Dark, semi-transparent background */
     color: white;
     padding: 10px 20px;
-    border-radius: 10px; /* Slightly rounded */
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Slightly rounded corners */
     cursor: pointer;
     font-size: 1em;
     text-decoration: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: background-color 0.3s ease, border-color 0.3s ease;
     display: inline-block; /* To allow margin/padding */
     margin-top: 20px; /* Add some space above the button */
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 .back-home-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker on hover */
 }
