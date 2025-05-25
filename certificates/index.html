@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Gallery</title>
+    <link rel="stylesheet" href="cerificates.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="../index.html" class="back-button">Home</a>
+            <h1>My Certificates</h1>
+            <p>Professional achievements and certifications</p>
+        </div>
+
+        <div class="gallery" id="certificateGallery">
+            <!-- Sample certificates for demonstration -->
+            <div class="certificate-card" onclick="openModal('Web Development', 'Completed comprehensive web development course covering HTML, CSS, JavaScript, and React.', 'TechAcademy')">
+                <div class="certificate-image">Certificate Image</div>
+                <div class="certificate-title">Web Development Certification</div>
+                <div class="certificate-date">December 2024</div>
+                <div class="certificate-description">Full-stack web development program</div>
+                <div class="certificate-issuer">TechAcademy</div>
+                <button class="download-btn" onclick="event.stopPropagation(); downloadCertificate('web-dev')">
+                    <span class="download-icon"></span>
+                    Download Certificate
+                </button>
+            </div>
+
+            <div class="certificate-card" onclick="openModal('Data Science', 'Advanced data science certification covering machine learning, statistics, and Python programming.', 'DataInstitute')">
+                <div class="certificate-image">Certificate Image</div>
+                <div class="certificate-title">Data Science Professional</div>
+                <div class="certificate-date">November 2024</div>
+                <div class="certificate-description">Advanced analytics and machine learning</div>
+                <div class="certificate-issuer">DataInstitute</div>
+                <button class="download-btn" onclick="event.stopPropagation(); downloadCertificate('data-science')">
+                    <span class="download-icon"></span>
+                    Download Certificate
+                </button>
+            </div>
+
+            <div class="certificate-card" onclick="openModal('Cloud Computing', 'AWS Cloud Practitioner certification demonstrating cloud computing fundamentals.', 'Amazon Web Services')">
+                <div class="certificate-image">Certificate Image</div>
+                <div class="certificate-title">AWS Cloud Practitioner</div>
+                <div class="certificate-date">October 2024</div>
+                <div class="certificate-description">Cloud computing fundamentals</div>
+                <div class="certificate-issuer">Amazon Web Services</div>
+                <button class="download-btn" onclick="event.stopPropagation(); downloadCertificate('aws-cloud')">
+                    <span class="download-icon"></span>
+                    Download Certificate
+                </button>
+            </div>
+
+            <div class="certificate-card" onclick="openModal('Digital Marketing', 'Comprehensive digital marketing certification covering SEO, social media, and analytics.', 'MarketingPro')">
+                <div class="certificate-image">Certificate Image</div>
+                <div class="certificate-title">Digital Marketing Expert</div>
+                <div class="certificate-date">September 2024</div>
+                <div class="certificate-description">SEO, social media, and analytics</div>
+                <div class="certificate-issuer">MarketingPro</div>
+                <button class="download-btn" onclick="event.stopPropagation(); downloadCertificate('digital-marketing')">
+                    <span class="download-icon"></span>
+                    Download Certificate
+                </button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number" id="totalCerts">4</div>
+                <div class="stat-label">Total Certificates</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2024</div>
+                <div class="stat-label">Latest Achievement</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Completion Rate</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for certificate details -->
+    <div class="modal" id="certificateModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+            <div class="modal-image" id="modalImage">Certificate Preview</div>
+            <h3 id="modalTitle">Certificate Title</h3>
+            <p id="modalDescription">Certificate description goes here.</p>
+            <button class="download-btn" onclick="downloadCertificate()">
+                <span class="download-icon"></span>
+                Download Certificate
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, description, issuer) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description + ' - Issued by ' + issuer;
+            document.getElementById('certificateModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('certificateModal').style.display = 'none';
+        }
+
+        function downloadCertificate(certId = 'certificate') {
+            // Simulate download - in real implementation, this would download the actual certificate
+            alert('Downloading ' + certId + ' certificate...');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('certificateModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
