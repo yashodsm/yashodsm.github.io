@@ -12,11 +12,17 @@
 
   <header class="hero">
     <div class="hero-text">
-      <h1><span class="typewrite" data-period="2000" data-type='[ "Welcome to Yashod’s Portfolio", "Pardon our pixels", "Exciting things are coming soon" ]'></span></h1>
+      <h1><span class="typewrite" data-period="2000" data-type='[ "Welcome to Yashod’s Portfolio", "Web Developer", "UI/UX Enthusiast", "Let’s Build Something Great!" ]'></span></h1>
       <p>Web Developer & Designer</p>
     </div>
-    
+    <nav class="bottom-nav">
+        <a href="/about/" class="glass-button">About</a>
+        <a href="/projects/" class="glass-button">Projects</a>
+        <a href="/certificates/index.html" class="glass-button">Certificates</a>         <a href="/contact/" class="glass-button">Contact</a>
+    </nav>
   </header>
+
+
   <script src="script.js"></script>
 
 
@@ -72,7 +78,6 @@
     }
   };
 </script>
-
 
 
 </body>
