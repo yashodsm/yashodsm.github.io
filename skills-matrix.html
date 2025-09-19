@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Skills Matrix</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa7b2;--accent:#0ea5a4;--white:#eef2f7}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    body{background:linear-gradient(180deg,#f6f8fb 0%, #ffffff 100%);color:#0b1220;padding:28px}
+    .container{max-width:1100px;margin:0 auto;background:white;border-radius:12px;box-shadow:0 8px 30px rgba(13,24,35,0.08);overflow:hidden}
+    header{padding:22px 28px;border-bottom:1px solid #eef2f6;display:flex;align-items:center;justify-content:space-between}
+    .title{font-size:18px;font-weight:700;color:#0b1220}
+    .subtitle{font-size:13px;color:var(--muted);margin-top:4px}
+    .controls{display:flex;gap:10px}
+    button{background:#0b1220;color:#fff;border:0;padding:10px 12px;border-radius:8px;font-weight:600;cursor:pointer}
+    button.secondary{background:#eef2f6;color:#0b1220;font-weight:600}
+    .content{padding:24px}
+    .meta{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px}
+    .meta .chip{background:#f3f7fb;padding:8px 12px;border-radius:999px;font-size:13px;color:#0b1220}
+    .table-wrap{overflow:auto;border-radius:8px;border:1px solid #eef2f6}
+    table{width:100%;border-collapse:collapse;min-width:900px}
+    th,td{padding:12px 14px;text-align:left;border-bottom:1px solid #f3f6f8}
+    th{background:#fafcfe;position:sticky;top:0;font-size:13px}
+    tr:nth-child(even) td{background: #ffffff}
+    tr:nth-child(odd) td{background: #fbfdff}
+    .skill-area{font-weight:700;color:#0b1220}
+    .proficiency{font-weight:700}
+    .small{font-size:12px;color:var(--muted)}
+    footer{padding:12px 24px;background:#fbfdff;border-top:1px solid #eef2f6;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+    @media (max-width:720px){header{flex-direction:column;align-items:flex-start;gap:8px}button{padding:8px 10px}}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div>
+        <div class="title">Skills Matrix</div>
+        <div class="subtitle"></div>
+      </div>
+      <div class="controls">
+        <button onclick="exportCSV()">Export CSV</button>
+        <button class="secondary" onclick="downloadHTML()">Download HTML</button>
+        <button onclick="window.print()">Print</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="table-wrap" id="table-wrap">
+        <table id="skills-table" aria-label="Skills matrix">
+          <thead>
+            <tr>
+              <th>Skill Area</th>
+              <th>Specific Skills</th>
+              <th>Proficiency Level</th>
+              <th>Years of Experience</th>
+              <th>Comments / Evidence</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="skill-area">Operating Systems</td>
+              <td>Windows 10/11, Windows Server 2016/2019/2022</td>
+              <td class="proficiency">Advanced</td>
+              <td>3+</td>
+              <td class="small">Administered school domain, AD, and GPO policies</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>macOS (Monterey, Ventura)</td>
+              <td>Intermediate</td>
+              <td>2</td>
+              <td class="small">Supported Apple devices for staff &amp; students</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Server Technologies</td>
+              <td>Active Directory, Group Policy, DHCP, DNS</td>
+              <td class="proficiency">Advanced</td>
+              <td>3+</td>
+              <td class="small">Managed school server infrastructure</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Microsoft Exchange / M365 Admin</td>
+              <td>Intermediate</td>
+              <td>2</td>
+              <td class="small">User account management &amp; mailbox support</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Network Administration</td>
+              <td>LAN/WAN, VLANs, Wireless Networks</td>
+              <td class="proficiency">Advanced</td>
+              <td>3+</td>
+              <td class="small">Configured and troubleshot school Wi-Fi and switches</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Firewall &amp; Internet Filtering</td>
+              <td>Intermediate</td>
+              <td>2</td>
+              <td class="small">Ensured DET compliance with content filtering</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Device Management</td>
+              <td>Windows Imaging &amp; Deployment</td>
+              <td class="proficiency">Advanced</td>
+              <td>3+</td>
+              <td class="small">Rolled out 1-to-1 student devices</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Apple School Manager / JAMF</td>
+              <td>Intermediate</td>
+              <td>2</td>
+              <td class="small">Assisted with iPad and Mac fleet management</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Hardware Support</td>
+              <td>Desktop/Laptop Repairs</td>
+              <td class="proficiency">Advanced</td>
+              <td>4</td>
+              <td class="small">Diagnosed &amp; repaired staff/student devices</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Printers &amp; Peripherals</td>
+              <td>Advanced</td>
+              <td>4</td>
+              <td class="small">Supported printers, projectors, AV systems</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Software Support</td>
+              <td>Microsoft Office / 365</td>
+              <td class="proficiency">Advanced</td>
+              <td>4</td>
+              <td class="small">Staff/student training and support</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>DET Applications &amp; Systems</td>
+              <td>Intermediate</td>
+              <td>2</td>
+              <td class="small">Supported education-specific platforms</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Professional Skills</td>
+              <td>Troubleshooting &amp; Problem Solving</td>
+              <td class="proficiency">Advanced</td>
+              <td>4</td>
+              <td class="small">Quick, systematic fault resolution</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Communication &amp; Stakeholder Support</td>
+              <td>Advanced</td>
+              <td>4</td>
+              <td class="small">Worked with teachers, students, ICT coordinators</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>ICT Training / PD Sessions</td>
+              <td>Intermediate</td>
+              <td>1</td>
+              <td class="small">Assisted with staff ICT professional development</td>
+            </tr>
+
+            <tr>
+              <td class="skill-area">Compliance &amp; Admin</td>
+              <td>DET Policy &amp; Security Awareness</td>
+              <td class="proficiency">Advanced</td>
+              <td>2</td>
+              <td class="small">Ensured compliance with DET guidelines</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Documentation &amp; Reporting</td>
+              <td class="proficiency">Advanced</td>
+              <td>3+</td>
+              <td class="small">Maintained IT documentation for audits</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+
+    <footer>
+
+        
+    </footer>
+  </div>
+
+  <script>
+    function download(filename, text) {
+      const element = document.createElement('a');
+      element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+      element.setAttribute('download', filename);
+      element.style.display = 'none';
+      document.body.appendChild(element);
+      element.click();
+      document.body.removeChild(element);
+    }
+
+    function exportCSV() {
+      const tbl = document.getElementById('skills-table');
+      const rows = Array.from(tbl.querySelectorAll('tr'));
+      const csv = rows.map(r => {
+        const cells = Array.from(r.querySelectorAll('th,td'));
+        return cells.map(c => '"' + c.innerText.replace(/"/g, '""') + '"').join(',');
+      }).join('\n');
+      download('skills-matrix.csv', csv);
+    }
+
+    function downloadHTML() {
+      const doc = '<!doctype html>\n' + document.documentElement.outerHTML;
+      const blob = new Blob([doc], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Skills_Matrix.html';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url);}, 100);
+    }
+  </script>
+</body>
+</html>
